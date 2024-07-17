@@ -8,6 +8,8 @@ import { Car } from '../Car';
 })
 export class CarsComponent {
 
+  newCar : Car = {} as Car;
+
   cars: Car[] = [
     {
       id: 1,
@@ -33,5 +35,11 @@ export class CarsComponent {
       year: 1990 
     }
   ];
+
+  saveCar(){
+    this.newCar.id = this.cars.length + 1;
+    this.cars.push(this.newCar);
+    this.newCar = {} as Car;
+  }
 
 }
